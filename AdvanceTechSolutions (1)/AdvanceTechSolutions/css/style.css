@@ -1,0 +1,674 @@
+/* =====================================================
+   ADVANCE TECH SOLUTIONS
+   Main Stylesheet
+   ===================================================== */
+
+/* ---------- Design Tokens / Colour Scheme ---------- */
+
+:root {
+    --color-primary: #003366;
+    --color-primary-dark: #002244;
+    --color-accent: #0099cc;
+    --color-accent-dark: #006f99;
+    --color-text: #333333;
+    --color-text-light: #ffffff;
+    --color-bg: #ffffff;
+    --color-bg-alt: #f4f4f4;
+    --color-border: #e1e1e1;
+
+    --font-base: "Poppins", Arial, sans-serif;
+
+    --space-sm: 0.625rem;   /* 10px */
+    --space-md: 1.25rem;    /* 20px */
+    --space-lg: 2.5rem;     /* 40px */
+    --space-xl: 4.375rem;   /* 70px */
+
+    --radius-sm: 0.3125rem; /* 5px */
+    --radius-md: 0.5rem;    /* 8px */
+    --radius-lg: 0.625rem;  /* 10px */
+}
+
+/* ---------- General Reset ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 100%; /* 1rem = 16px, root for all rem units below */
+}
+
+body {
+    font-family: var(--font-base);
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ---------- Header ---------- */
+
+header {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    padding: 0.9375rem 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.875rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.logo h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+nav a {
+    color: var(--color-text-light);
+    padding: 0.625rem 0.875rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    background-color: var(--color-accent);
+}
+
+/* ---------- Hero Section ---------- */
+
+.hero {
+    min-height: 37.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5rem 6%;
+    background:
+        linear-gradient(rgba(0, 51, 102, 0.82), rgba(0, 51, 102, 0.82)),
+        url("../images/hero.jpg") center/cover no-repeat;
+}
+
+.hero-content {
+    max-width: 53.125rem;
+    color: var(--color-text-light);
+}
+
+.hero-content h2 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
+}
+
+.hero-content p {
+    max-width: 43.75rem;
+    margin: 0 auto 1.875rem;
+    font-size: 1.1rem;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: var(--color-text-light);
+    border: none;
+    padding: 0.8125rem 1.5625rem;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--color-accent-dark);
+    transform: translateY(-2px);
+}
+
+/* ---------- General Sections ---------- */
+
+section {
+    padding: 4.375rem 6%;
+}
+
+section > h2 {
+    text-align: center;
+    color: var(--color-primary);
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+/* ---------- Services ---------- */
+
+.services {
+    background-color: var(--color-bg-alt);
+}
+
+.service-container {
+    max-width: 75rem;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5625rem;
+}
+
+.service-card {
+    background-color: var(--color-text-light);
+    padding: 2.1875rem 1.5625rem;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.service-card i {
+    color: var(--color-accent);
+    margin-bottom: 1.25rem;
+}
+
+.service-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+}
+
+/* ---------- Why Choose Us ---------- */
+
+.why-us {
+    background-color: var(--color-text-light);
+}
+
+.features {
+    max-width: 68.75rem;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5625rem;
+}
+
+.features > div {
+    padding: 1.5625rem;
+    text-align: center;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+}
+
+.features i {
+    color: var(--color-accent);
+    font-size: 2rem;
+    margin-bottom: 0.9375rem;
+}
+
+.features h3 {
+    color: var(--color-primary);
+    margin-bottom: 0.625rem;
+}
+
+/* ---------- Testimonials ---------- */
+
+.testimonials {
+    background-color: var(--color-bg-alt);
+    text-align: center;
+}
+
+.testimonial {
+    display: inline-block;
+    vertical-align: top;
+    width: 42%;
+    max-width: 31.25rem;
+    margin: 0.625rem;
+    padding: 1.875rem;
+    background-color: var(--color-text-light);
+    border-left: 5px solid var(--color-accent);
+    border-radius: 6px;
+    text-align: left;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+}
+
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 0.75rem;
+}
+
+.testimonial h4 {
+    color: var(--color-primary);
+}
+
+/* ---------- Call to Action ---------- */
+
+.cta {
+    text-align: center;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+}
+
+.cta h2 {
+    color: var(--color-text-light);
+    margin-bottom: 0.9375rem;
+}
+
+.cta p {
+    margin-bottom: 1.5625rem;
+}
+
+/* ---------- Page Header ---------- */
+
+.page-header {
+    padding: 5rem 6%;
+    text-align: center;
+    background:
+        linear-gradient(rgba(0, 51, 102, 0.92), rgba(0, 51, 102, 0.92)),
+        url("../images/hero.jpg") center/cover no-repeat;
+    color: var(--color-text-light);
+}
+
+.page-header h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 0.625rem;
+}
+
+.page-header p {
+    font-size: 1.05rem;
+}
+
+/* ---------- About Section ---------- */
+
+.about-section {
+    background-color: var(--color-text-light);
+}
+
+.about-content {
+    max-width: 56.25rem;
+    margin: auto;
+}
+
+.about-content h2 {
+    color: var(--color-primary);
+    margin-bottom: 1.25rem;
+}
+
+.about-content p {
+    margin-bottom: 1.25rem;
+}
+
+.about-photo {
+    width: 100%;
+    max-width: 56.25rem;
+    height: auto;
+    display: block;
+    margin: 0 auto 1.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------- Mission Cards ---------- */
+
+.mission-section {
+    max-width: 75rem;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5625rem;
+}
+
+.info-card {
+    padding: 2.1875rem 1.5625rem;
+    text-align: center;
+    background-color: var(--color-bg-alt);
+    border-radius: 10px;
+}
+
+.info-card i {
+    color: var(--color-accent);
+    font-size: 2.5rem;
+    margin-bottom: 0.9375rem;
+}
+
+.info-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+}
+
+/* ---------- Forms ---------- */
+
+.form-section {
+    max-width: 50rem;
+    margin: 0 auto;
+}
+
+.form-section h2 {
+    color: var(--color-primary);
+    margin-bottom: 1.5625rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+}
+
+.contact-form label {
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-top: 0.625rem;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8125rem 0.9375rem;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: var(--color-text-light);
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px rgba(0, 153, 204, 0.15);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form .btn {
+    margin-top: 0.9375rem;
+    align-self: flex-start;
+}
+
+.form-message {
+    min-height: 1.5625rem;
+    margin-top: 0.625rem;
+    font-weight: 600;
+}
+
+/* ---------- Contact Section ---------- */
+
+.contact-section {
+    max-width: 75rem;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.125rem;
+}
+
+.contact-details h2 {
+    color: var(--color-primary);
+    margin-bottom: 0.9375rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.125rem;
+    margin-top: 1.5625rem;
+}
+
+.contact-item > i {
+    color: var(--color-accent);
+    font-size: 1.4rem;
+    width: 25px;
+    text-align: center;
+}
+
+.contact-item h3 {
+    color: var(--color-primary);
+    margin-bottom: 0.25rem;
+}
+
+/* ---------- Map ---------- */
+
+.map-section {
+    max-width: 75rem;
+    margin: auto;
+    text-align: center;
+}
+
+.map-section h2 {
+    color: var(--color-primary);
+    margin-bottom: 1.5625rem;
+}
+
+.map-section iframe {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+    background-color: var(--color-primary-dark);
+    color: var(--color-text-light);
+    text-align: center;
+    padding: 2.8125rem 6%;
+}
+
+.footer-content {
+    max-width: 56.25rem;
+    margin: auto;
+}
+
+.footer-content h3 {
+    margin-bottom: 0.625rem;
+}
+
+.footer-content p {
+    margin: 0.5rem 0;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 0.9375rem;
+    margin: 1.25rem 0;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-accent);
+    color: var(--color-text-light);
+    border-radius: 50%;
+    transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: var(--color-text-light);
+    color: var(--color-primary);
+    transform: translateY(-3px);
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+   ===================================================== */
+
+/* ---------- Tablets ---------- */
+
+@media (max-width: 900px) {
+
+    header {
+        flex-direction: column;
+        padding: 0.9375rem 4%;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .service-container,
+    .features,
+    .mission-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-section {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial {
+        width: 80%;
+    }
+}
+
+
+/* ---------- Mobile Phones ---------- */
+
+@media (max-width: 600px) {
+
+    header {
+        position: relative;
+        padding: 1.125rem 4%;
+    }
+
+    .logo h1 {
+        font-size: 1.15rem;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.1875rem;
+    }
+
+    nav li {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav a {
+        display: block;
+        width: 100%;
+    }
+
+    .hero {
+        min-height: 31.25rem;
+        padding: 3.75rem 5%;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+    }
+
+    section {
+        padding: 3.125rem 5%;
+    }
+
+    section > h2 {
+        font-size: 1.6rem;
+    }
+
+    .service-container,
+    .features,
+    .mission-section {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial {
+        width: 100%;
+        margin: 0.625rem 0;
+    }
+
+    .page-header {
+        padding: 3.75rem 5%;
+    }
+
+    .contact-section {
+        gap: 2.1875rem;
+    }
+
+    .contact-form .btn {
+        width: 100%;
+    }
+
+    .map-section iframe {
+        height: 300px;
+    }
+
+    footer {
+        padding: 2.1875rem 5%;
+    }
+}
+
+/* ---------- Small Phones ---------- */
+
+@media (max-width: 400px) {
+
+    .hero-content h2 {
+        font-size: 1.7rem;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .service-card {
+        padding: 1.5625rem 1.125rem;
+    }
+}
+
+/* Service Images */
+
+.service-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1.25rem;
+}
